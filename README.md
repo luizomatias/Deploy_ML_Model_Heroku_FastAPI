@@ -1,5 +1,4 @@
-Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
-
+In this project, it will be develop a classification model on publicly available Census Bureau data. It will be create unit tests to monitor the model performance on various slices of the data. Then, deploy the model using the FastAPI package and create API tests. Both the slice-validation and the API tests will be incorporated into a CI/CD framework using GitHub Actions.  Two datasets will be provided in the starter code on the following page to experience updating the dataset and model in git and DVC.
 # Environment Set up
 * Download and install conda if you don’t have it already.
     * Use the supplied requirements file to create a new environment, or
