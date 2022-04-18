@@ -24,4 +24,4 @@ jobs:
         aws-region: 'us-east-1'
     - name: Pull data with dvc
       run: |
-        dvc pull starter/data/census.csv
+        dvc pull starter/data/census_clean.csv
