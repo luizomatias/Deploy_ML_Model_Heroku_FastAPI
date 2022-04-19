@@ -1,9 +1,11 @@
+import os
+import sys
+sys.path.insert(1, './starter/starter/')
 import pytest
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import os
-from starter.ml.data import process_data
 from starter.ml.model import train_model
+from starter.ml.data import process_data
 
 
 @pytest.fixture
