@@ -1,4 +1,4 @@
 outs:
-- md5: 163bf095e33b88e95979da6844004bce
-  size: 9105
+- md5: 49c07539e93bf837718779e719eb1cac
+  size: 9051
   path: metrics_data_slice.json
