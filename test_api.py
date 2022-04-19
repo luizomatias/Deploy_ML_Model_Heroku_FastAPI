@@ -38,10 +38,18 @@ def test_post_request_target_salary_smaller_50k_remote():
 def test_post_request_target_salary_bigger_50k():
 
     data = Features().dict(by_alias=True)
-    data['capital-gain'] = 15024
     data['education'] = 'HS-grad'
-    data['workclass'] = 'Private'
+    data['age'] = 52
+    data['marital_status'] = "Married-civ-spouse"
+    data['relationship'] = "Wife"
+    data["sex"] = 'Female'
+    data['workclass'] = 'Self-emp-inc'
     data['hours_per_week'] = 40
+    data['occupation'] = 'Exec-managerial'
+    data['education_num'] = 9
+    data['native-country'] = 'United-States'
+    data['fnlgt'] = 287927
+    data['capital_gain'] = 15024
     response = client.post("/predictions", json = data)
     assert response.status_code == 200
-    assert response.json() == {'predict': 'Salary <= 50k'}
+    assert response.json() == {'predict': 'Salary > 50k'}
