@@ -1,0 +1,4 @@
+outs:
+- md5: 43df17d4ff5fd163061807d9931548c0
+  size: 92
+  path: metrics_dict.json
