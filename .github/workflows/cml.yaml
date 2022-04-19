@@ -28,6 +28,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest starter/starter/ml/test_model.py -vv
+        pytest test_api.py -vv
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
