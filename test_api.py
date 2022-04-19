@@ -15,12 +15,12 @@ def test_api_get_root():
     assert response.json()['message'] == "Welcome to classification model on publicly available Census Bureau data! :)"
 
 
-def test_post_request_target_salary_bigger_50k():
+def test_post_request_target_salary_smaller_50k():
 
     data = Features().dict(by_alias=True)
     response = client.post("/predictions", json = data)
     assert response.status_code == 200
-    assert response.json() == {'predict': 'Salary > 50k'}
+    assert response.json() == {'predict': 'Salary <= 50k'}
 
 
 def test_post_request_target_salary_smaller_50k_remote():
@@ -35,13 +35,13 @@ def test_post_request_target_salary_smaller_50k_remote():
     assert response.json() == {'predict': 'Salary <= 50k'}
 
 
-def test_post_request_target_salary_smaller_50k():
+def test_post_request_target_salary_bigger_50k():
 
     data = Features().dict(by_alias=True)
-    data['relationship'] = 'Not-in-family'
+    data['capital-gain'] = 15024
     data['education'] = 'HS-grad'
-    data['workclass'] = 'Self-emp-inc'
-    data['hours_per_week'] = 13
+    data['workclass'] = 'Private'
+    data['hours_per_week'] = 40
     response = client.post("/predictions", json = data)
     assert response.status_code == 200
     assert response.json() == {'predict': 'Salary <= 50k'}
